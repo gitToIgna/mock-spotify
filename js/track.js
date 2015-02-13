@@ -39,6 +39,9 @@ class Track {
         this.featuringArtists = [];
         this.songWriters = [];
         this.producers = [];
+        
+        Utils.assertString(data.preview, 'Preview should be a string')
+        this.preview = data.preview;
     }
 
     addArtist(artist){

@@ -43,6 +43,7 @@ class Album {
 
         this.tracks = [];
 
+        this.id = data.id;
     }
 
     addTrack(track) {
