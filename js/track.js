@@ -34,6 +34,9 @@ class Track {
         Utils.assertNumber(data.price, 'Price should be a number');
         this.price = data.price;
 
+        //Utils.assertNumber(data.trackNumber, 'Track number should be a number');
+        //this.trackNumber = data.trackNumber;
+
         this.releaseDay = new Date(data.releaseDay);
         this.artists = [];
         this.featuringArtists = [];

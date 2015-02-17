@@ -51,8 +51,7 @@ $('#search_artist').on('click', function(event){
 					url: data.images[2].url,
 					id: data.id
 				});
-			});
-			
+			});	
 		// display
 		myAlbums.forEach(function (album) {
 			$('.albumList').append(`
@@ -67,35 +66,37 @@ $('#search_artist').on('click', function(event){
 		})
 
 		$(".seetracks").on("click", function(event){
+			event.preventDefault();
 			var button = $(event.target);
-			var albumEl = button.closest("[data-album]");
+			var albumEl = button.closest('li');
 			var id = albumEl.data("album");
 			var trackUrl = "https://api.spotify.com/v1/albums/" + id;
 			$.ajax(trackUrl)
-			.done(function (response) {
-				var myTracks = response.tracks.items.map(function (data) {
-					var track = new TrackClass ({
-
-						duration: data.duration_ms,
-						title: data.name
-					});
-					track.addArtist();
-					return
-					
-				})
+				.done(function (response) {
+					var tracks = response.tracks.items.map(function (data) {
+						return new TrackClass ({
+							preview: data.preview_url,
+							duration: data.duration_ms,
+							title: data.artists[0].name
+						});
+					})
+				tracks.forEach(function (track){
+				//display
+					$(event.target.parentElement).find(".tracklist").append(`
+					 	<li>
+					        <h3>"${track.title}"</h3>
+					        <p>"${track.duration}"</p>
+					        <audio src="${track.preview}" controls></audio>
+					    </li>`
+					);
+				});
 			});
-
+				
 		});
-
-		myTracks.forEach(function(){
-
-		});
-
-			
-		})
-		.error(function (err) {
-			console.log(err);
-		})
+	})
+	.error(function (err) {
+		console.log(err);
+	})
 })
 
 
