@@ -49,8 +49,11 @@ h2{
 }
 .album_data_list{
     margin-bottom: 20px;
-    height:300px;
     text-align: center;
+}
+.album_upper_container{
+	height:300px;
+	width:100%;
 }
 .album_image{
 	margin:0 auto;
@@ -70,9 +73,14 @@ h2{
 	right:auto;
 	left:auto;
 	margin:15px;
-
 }
-.tracklist{
-	display: inline-block;
-	width:;
+ul.tracklist{
+	
+}
+
+li.track{
+	
+}
+.track_title{
+	padding:10px;
 }
