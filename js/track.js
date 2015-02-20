@@ -45,6 +45,8 @@ class Track {
         
         Utils.assertString(data.preview, 'Preview should be a string')
         this.preview = data.preview;
+
+        this.trackNumber = data.trackNumber;
     }
 
     addArtist(artist){
@@ -58,7 +60,7 @@ class Track {
     }
 
     addSongWriter(songWriter){
-        Utils.assertString(songWriter, 'Song writter should be a string.');
+        Utils.assertString(songWriter, 'Song writer should be a string.');
         this.songWriters.push(songWriter);
     }
 

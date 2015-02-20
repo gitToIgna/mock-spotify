@@ -55,12 +55,14 @@ $('#search_artist').on('click', function(event){
 		// display
 		myAlbums.forEach(function (album) {
 			$('.albumList').append(`
-			 	<li data-album="${album.id}">
-			        <img src="${album.cover}">
-			        <h2>"${album.title}"</h2>
-			        <button class="seetracks">See Tracks</button>
-			        <ul class="tracklist"></ul>
-			    </li>`
+				<div class="album_data_list col-lg-6 alight="center">
+				 	<li data-album="${album.id}">
+				        <img src="${album.cover}" class="album_image">
+				        <h2>"${album.title}"</h2>
+				        <button class="seetracks">See Tracks</button>
+				        <ul class="tracklist"></ul>
+				    </li>
+			    </div>`
 			);
 			//don't forget to use ` for multi-line string
 		})
@@ -75,17 +77,17 @@ $('#search_artist').on('click', function(event){
 				.done(function (response) {
 					var tracks = response.tracks.items.map(function (data) {
 						return new TrackClass ({
+							trackNumber: data.track_number,
 							preview: data.preview_url,
 							duration: data.duration_ms,
-							title: data.artists[0].name
+							title: data.name
 						});
 					})
 				tracks.forEach(function (track){
 				//display
 					$(event.target.parentElement).find(".tracklist").append(`
-					 	<li>
-					        <h3>"${track.title}"</h3>
-					        <p>"${track.duration}"</p>
+					 	<li class="track">
+					        <h3>${track.trackNumber}: ${track.title}</h3>
 					        <audio src="${track.preview}" controls></audio>
 					    </li>`
 					);

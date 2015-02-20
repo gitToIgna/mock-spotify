@@ -1,0 +1,78 @@
+body{
+	background-color: #232B2B;
+}
+header{
+	height:150px;
+	width:100%;
+}
+h1 {
+  font: 400 70px/1.2 'Sansita one', Georgia, serif;
+  text-align: center;
+  color: #DC3D24;
+}
+.albumList{
+	padding:0;
+	border:0;
+}
+ul {
+  font: 400 17px/1.6 'Kameron', Georgia, serif;
+  color: #fff;
+  padding:none;
+}
+
+#search_artist{
+	background-color: E3AE57;
+	border-radius: 2px;
+	font-family:'Kameron', Georgia, serif;
+	font-size: 16px;
+	border: none;
+	height:30px;
+	width:80px;
+}
+#artistname{
+	height:30px;
+	width:200px;
+	font-family:'Kameron', Georgia, serif;
+	font-size: 16px;
+}
+.search_artist_info{
+	text-align: center;
+	margin:30px 0;
+}
+li{ 
+	list-style:none;
+}
+h2{
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.album_data_list{
+    margin-bottom: 20px;
+    height:300px;
+    text-align: center;
+}
+.album_image{
+	margin:0 auto;
+}
+.seetracks{
+	background-color: #fff;
+	border-radius: 2px;
+	font-family:'Kameron', Georgia, serif;
+	font-size: 16px;
+	border: none;
+	height:30px;
+	width:120px;
+	background-color:E3AE57;
+	color:#232B2B;
+	position: relative;
+	bottom:10px;
+	right:auto;
+	left:auto;
+	margin:15px;
+
+}
+.tracklist{
+	display: inline-block;
+	width:;
+}
